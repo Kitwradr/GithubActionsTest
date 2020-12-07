@@ -32,7 +32,7 @@ namespace GithubActionsTest
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello World! Changed message to test CI");
+                    await context.Response.WriteAsync("Hello World! Testing CI/CD via azure pipelines 12/7 11:24AM");
                 });
             });
         }
