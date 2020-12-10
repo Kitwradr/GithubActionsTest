@@ -1,15 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-
 namespace GithubActionsTest
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Hosting;
     public class Startup
     {
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -32,7 +31,8 @@ namespace GithubActionsTest
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello World! Testing CI/CD via azure pipelines 12/7 11:27AM");
+                    var time = DateTime.Now.ToString("h:mm:ss tt");
+                    await context.Response.WriteAsync($"Hello World! Testing CI/CD via azure pipelines {time}");
                 });
             });
         }
